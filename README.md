@@ -12,6 +12,8 @@ $ ./gradlew :<tipo>:<nome>:<task>
 $ ./gradlew :simulazioni:Autostrada:test
 ```
 
+## Come contribuire
+Per contribuire potete *"semplicemente"* creare una **pull request** (come descritto in [questa guida][pr-tutorial]) o suggerire delle modifiche aprendo un **issue**.
 
 ## Esercizi
 
@@ -27,6 +29,8 @@ $ ./gradlew :simulazioni:Autostrada:test
 
 [ris-autostrada]: http://assassinsmod.github.io/Lab-Prog/Autostrada.html
 [ris-cassa]: http://assassinsmod.github.io/Lab-Prog/Cassa.html
+
+[pr-tutorial]: https://help.github.com/articles/using-pull-requests/
 
 [Autostrada]: /simulazioni/Autostrada
 [Cassa]: /simulazioni/Cassa
