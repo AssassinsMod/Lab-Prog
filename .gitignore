@@ -1,0 +1,11 @@
+# Gradle Junk
+/.gradle
+
+
+# Editor Junk
+/.imdone
+
+
+# Projects Junk
+/**/build/*
+!/**/build/reports
