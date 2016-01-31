@@ -1,4 +1,5 @@
 
 include 'simulazioni:Autostrada'
+include 'simulazioni:Cassa'
 
 rootProject.name = 'lab-prog'
