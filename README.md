@@ -1,8 +1,10 @@
 # Laboratorio di Programmazione
 Il progetto sfrutta [Gradle][] per gestire le fasi di build e test.  
-In questo ambito, simulazioni ed esercizi sono considerato dei *sottoprogetti* che condividono gli stessi *task*.
+In questo ambito, simulazioni ed esercizi sono considerato dei
+*sottoprogetti* che condividono gli stessi *task*.
 
-Per avere un'idea dei diversi *task* disponibili raccomando di dare un'occhiata alla documentazione del [plugin java][] di gradle.
+Per avere un'idea dei diversi *task* disponibili raccomando di dare
+un'occhiata alla documentazione del [plugin java][] di gradle.
 
 In ogni caso la sintassi generale è:
 ```
@@ -13,28 +15,40 @@ $ ./gradlew :simulazioni:Autostrada:test
 ```
 
 ## Come contribuire
-Per contribuire potete *"semplicemente"* creare una **pull request** (come descritto in [questa guida][pr-tutorial]) o suggerire delle modifiche aprendo un **issue**.
-
-## Esami
-- [Scuola][] - [risultati][ris-scuola]
-
-## Esercizi
-
-## Simulazioni
-- [Autostrada][] - [risultati][ris-autostrada]
-- [Cassa][] - [risultati][ris-cassa]
-
-
+Per contribuire basta creare una **pull request** (come descritto in
+[questa guida][gh-pull-request]) o suggerire delle modifiche aprendo
+un **issue**.
 
 [Gradle]: http://gradle.org/
 [plugin java]: http://gradle.org/getting-started-gradle-java/
+[gh-pull-request]: https://help.github.com/articles/using-pull-requests/
 
-[ris-autostrada]: http://assassinsmod.github.io/Lab-Prog/Autostrada.html
-[ris-cassa]: http://assassinsmod.github.io/Lab-Prog/Cassa.html
-[ris-scuola]: http://assassinsmod.github.io/Lab-Prog/Scuola.html
 
-[pr-tutorial]: https://help.github.com/articles/using-pull-requests/
 
-[Scuola]: /esami/Scuola
-[Autostrada]: /simulazioni/Autostrada
-[Cassa]: /simulazioni/Cassa
+## Esami
+|    Nome    |   Sorgenti    |   Risultati   |     Docs      |
+|:---------- |:-------------:|:-------------:|:-------------:|
+| Scuola     | [link][src-3] | [link][res-3] | [link][doc-3] |
+
+
+## Esercizi
+
+
+## Simulazioni
+|    Nome    |   Sorgenti    |   Risultati   |     Docs      |
+|:---------- |:-------------:|:-------------:|:-------------:|
+| Autostrada | [link][src-1] | [link][res-1] | [link][doc-1] |
+| Cassa      | [link][src-2] | [link][res-2] | [link][doc-2] |
+
+
+[src-1]: /simulazioni/Autostrada
+[src-2]: /simulazioni/Cassa
+[src-3]: /esami/Scuola
+
+[res-1]: http://assassinsmod.github.io/Lab-Prog/test/Autostrada
+[res-2]: http://assassinsmod.github.io/Lab-Prog/test/Cassa
+[res-3]: http://assassinsmod.github.io/Lab-Prog/test/Scuola
+
+[doc-1]: http://assassinsmod.github.io/Lab-Prog/docs/Autostrada
+[doc-2]: http://assassinsmod.github.io/Lab-Prog/docs/Cassa
+[doc-3]: http://assassinsmod.github.io/Lab-Prog/docs/Scuola

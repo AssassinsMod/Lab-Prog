@@ -2,7 +2,7 @@ subprojects {
     apply plugin: 'java'
 
     // Options
-    version = '1.1.0'
+    version = '1.1.0-u2'
 
 
     // Options-end
