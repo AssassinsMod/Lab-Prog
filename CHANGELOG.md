@@ -8,6 +8,10 @@ Il progetto segue lo standard di [Versionamento Semantico](http://semver.org/).
 
 ---
 
+## [1.1.0-u2][]
+### Modifiche
+- Ora sono servite sia le doc che i risultati
+
 ## [1.1.0][]
 ### Aggiunte
 - [Scuola][] da [AssassinsMod][]
