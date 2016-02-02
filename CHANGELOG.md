@@ -5,6 +5,14 @@ Il progetto segue lo standard di [Versionamento Semantico](http://semver.org/).
 ---
 
 ## [In Sviluppo][Unreleased]
+### Aggiunte
+- Makefile
+
+### Modificate
+- I file di testo ora seguono la sintassi hamcrest
+
+### Fix
+- Completata la documentazione per la simulazioni Cassa
 
 ---
 

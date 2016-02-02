@@ -1,3 +1,5 @@
+.PHONY: html
+
 t=all
 
 all:
