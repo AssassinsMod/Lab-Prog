@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-paths=( simulazioni esami )
+categories=( "simulazioni" "esami" )
 
 # Clean everything up
 if [ -d "results" ]; then
@@ -12,14 +12,14 @@ echo "Generating folder structure.."
 mkdir -p "results"
 
 # Iterate through projects
-for path in $paths; do
-	for proj in $(ls $path); do
+for group in ${categories[@]}; do
+	for proj in $(ls $group); do
 
 		# Clone results folder
-		res_path="$path/$proj/build/reports/tests"
+		res_path="$group/$proj/build/reports/tests"
 
 		if [ -d "$res_path" ]; then
-			echo "Cloning '$path/$proj'"
+			echo "Cloning '$group/$proj'"
 			cp -r "$res_path" "results/$proj"
 
 			# Link html
