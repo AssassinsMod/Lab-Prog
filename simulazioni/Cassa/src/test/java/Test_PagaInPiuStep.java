@@ -1,6 +1,7 @@
 import org.junit.*;
 import org.junit.rules.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_PagaInPiuStep {
 	@Test
@@ -14,9 +15,7 @@ public class Test_PagaInPiuStep {
 		cassa.paga(new Moneta(10));
 		cassa.paga(new Moneta(10));
 
-		assertTrue(
-			"Errore nel calcolo del pagamento in più step",
-			cassa.pagato()
-		);
+		assertThat("Errore nel calcolo del pagamento in più step",
+			cassa.pagato(), is(true));
 	}
 }

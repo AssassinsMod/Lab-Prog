@@ -1,6 +1,7 @@
 import org.junit.*;
 import org.junit.rules.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_Resto {
 	@Test
@@ -14,10 +15,7 @@ public class Test_Resto {
 		cassa.paga(new Moneta(10));
 		cassa.paga(new Moneta(10));
 
-		assertEquals(
-			"Errore nel resto del calcolo",
-			7,
-			cassa.calcolaResto().inCentesimi()
-		);
+		assertThat("Errore nel resto del calcolo",
+			cassa.calcolaResto().inCentesimi(), is(7));
 	}
 }

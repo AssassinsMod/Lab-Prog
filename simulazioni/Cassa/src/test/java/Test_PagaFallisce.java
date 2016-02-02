@@ -1,6 +1,7 @@
 import org.junit.*;
 import org.junit.rules.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_PagaFallisce {
 	@Test
@@ -12,9 +13,6 @@ public class Test_PagaFallisce {
 		cassa.paga(new Banconota(5));
 		cassa.passa(new Prodotto("prova3",23356));
 
-		assertFalse(
-			"Pagamento non sufficiente!",
-			cassa.pagato()
-		);
+		assertThat("Pagamento non sufficiente!", cassa.pagato(), is(false));
 	}
 }

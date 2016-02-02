@@ -1,6 +1,7 @@
 import org.junit.*;
 import org.junit.rules.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_Sort {
 	@Test
@@ -13,10 +14,6 @@ public class Test_Sort {
 		cassa.passa(new Prodotto("prova3", 157));
 		cassa.passa(new Prodotto("prova4", 57));
 
-		assertEquals(
-			"Più costoso",
-			prod,
-			cassa.piuCostoso()
-		);
+		assertThat("Più costoso", cassa.piuCostoso(), is(prod));
 	}
 }

@@ -1,6 +1,7 @@
 import org.junit.*;
 import org.junit.rules.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_Azzera {
     @Test
@@ -24,16 +25,9 @@ public class Test_Azzera {
             fail("Errori durante il pagamento!");
         }
 
-        assertEquals(
-            "Azzeramento mal calcolato!",
-            120,
-            cassa.azzeramento().inCentesimi()
-        );
+        assertThat("Azzeramento mal calcolato!",
+            cassa.azzeramento().inCentesimi(), is(120));
 
-        assertEquals(
-            "Resto non azzerato!",
-            0,
-            cassa.quanti()
-        );
+        assertThat("Resto non azzerato!", cassa.quanti(), is(0));
     }
 }

@@ -1,5 +1,7 @@
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.*;
+import org.junit.rules.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_Strada {
     // Strada (50km, 100km/h)
@@ -7,30 +9,19 @@ public class Test_Strada {
 
     @Test
     public void orePercorrenza() {
-        assertEquals(
-        //  Le ore di percorrenza minime dovrebbero essere 0.5
-            0.5F,
-            s.orePercorrenzaVelocitaCodice(),
-            0F
-        );
+        assertThat("Le ore di percorrenza minime dovrebbero essere 0.5",
+            s.orePercorrenzaVelocitaCodice(), is(0.5F));
     }
 
     @Test
     public void velocitaMedia() {
-        assertEquals(
-        //  La velocità media dato 'T = 1800' dovrebbe essere 100
-            100F,
-            s.velocitaMediaDatoTempoPercorrenzaInSec(1800),
-            0F
-        );
+        assertThat("La velocità media dato 'T = 1800' dovrebbe essere 100",
+            s.velocitaMediaDatoTempoPercorrenzaInSec(1800), is(100F));
     }
 
     @Test
     public void limiteSuperato() {
-        assertEquals(
-            "Con 'T = 1700' il limite dovrebbe essere stato superato",
-            true,
-            s.superatoLimiteDatoTempoPercorrenzaInSec(1700)
-        );
+        assertThat("Con 'T = 1700' il limite dovrebbe essere stato superato",
+            s.superatoLimiteDatoTempoPercorrenzaInSec(1700), is(true));
     }
 }

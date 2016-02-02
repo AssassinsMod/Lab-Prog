@@ -1,6 +1,7 @@
 import org.junit.*;
 import org.junit.rules.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_Inserimento {
 	@Test
@@ -12,10 +13,7 @@ public class Test_Inserimento {
 
 		cassa.passa(new Prodotto("prova", 57));
 
-		assertEquals(
-			"Contenuto non aumentato!",
-			1,
-			cassa.quanti() - temp
-		);
+		assertThat("Contenuto non aumentato!",
+			cassa.quanti() - temp, is(1));
 	}
 }

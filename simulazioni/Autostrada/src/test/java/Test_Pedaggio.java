@@ -1,5 +1,7 @@
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.*;
+import org.junit.rules.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_Pedaggio {
     // Autostrada (50km, 100km/h, 0.2€/km, 50kW)
@@ -16,23 +18,16 @@ public class Test_Pedaggio {
         au.ingresso(t1);
         au.ingresso(t2);
 
-        assertEquals(
-            "Dovrebbero essere presenti 4 veicoli",
-            4,
-            au.quantiVeicoli()
-        );
+        assertThat("Dovrebbero essere presenti 4 veicoli",
+            au.quantiVeicoli(), is(4));
     }
 
     @Test
     public void potenzaMedia() {
         ingresso();
 
-        assertEquals(
-        //  La potenza media non corrisponde
-            ((80 + 90 + 500 + 600) / 4F),
-            au.potenzaMedia(),
-            0F
-        );
+        assertThat("La potenza media non corrisponde",
+            au.potenzaMedia(), is((80 + 90 + 500 + 600) / 4F));
     }
 
     @Test
@@ -43,11 +38,8 @@ public class Test_Pedaggio {
         } catch (RuntimeException e) {
             autoUscita = false;
         }
-        assertEquals(
-            "L'auto non esiste, dovrebbe dare errore!",
-            false,
-            autoUscita
-        );
+        assertThat("L'auto non esiste, dovrebbe dare errore!",
+            autoUscita, is(false));
     }
 
 
@@ -64,10 +56,7 @@ public class Test_Pedaggio {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        assertEquals(
-            "L'auto dovrebbe essere stata multata",
-            true,
-            autoMultata
-        );
+        assertThat("L'auto dovrebbe essere stata multata",
+            autoMultata, is(true));
     }
 }

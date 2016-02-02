@@ -1,6 +1,7 @@
 import org.junit.*;
 import org.junit.rules.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Test_Rimozione {
 	@Test
@@ -16,10 +17,7 @@ public class Test_Rimozione {
 		cassa.storna(1);
 		cassa.storna(prod);
 
-		assertEquals(
-			"Contenuto della cassa non diminuito",
-			2,
-			temp - cassa.quanti()
-		);
+		assertThat("Contenuto della cassa non diminuito",
+			temp - cassa.quanti(), is(2));
 	}
 }
