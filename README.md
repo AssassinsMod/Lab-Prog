@@ -41,9 +41,9 @@ un **issue**.
 | Cassa      | [link][src-2] | [link][res-2] | [link][doc-2] |
 
 
-[src-1]: /simulazioni/Autostrada
-[src-2]: /simulazioni/Cassa
-[src-3]: /esami/Scuola
+[src-1]: /simulazioni/Autostrada/src/main/java
+[src-2]: /simulazioni/Cassa/src/main/java
+[src-3]: /esami/Scuola/src/main/java
 
 [res-1]: http://assassinsmod.github.io/Lab-Prog/test/Autostrada
 [res-2]: http://assassinsmod.github.io/Lab-Prog/test/Cassa
