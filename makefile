@@ -4,17 +4,19 @@ all:
 	@echo "Nothing to see here :D"
 
 test:
+	@echo "Testing.."
 ifeq ($(t), all)
-	@./gradlew test
+	@./gradlew -q test
 else
-	@./gradlew "$(shell echo $(t) | sed 's/\/\(.\)/:\1/g' | sed 's/\///g')":test
+	@./gradlew -q "$(shell echo $(t) | sed 's/\/\(.\)/:\1/g' | sed 's/\///g')":test
 endif
 
 docs:
+	@echo "Generating docs.."
 ifeq ($(t), all)
-	@./gradlew javadoc
+	@./gradlew -q javadoc
 else
-	@./gradlew "$(shell echo $(t) | sed 's/\/\(.\)/:\1/g' | sed 's/\///g')":javadoc
+	@./gradlew -q "$(shell echo $(t) | sed 's/\/\(.\)/:\1/g' | sed 's/\///g')":javadoc
 endif
 
 html:
