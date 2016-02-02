@@ -2,36 +2,50 @@
 
 categories=( "simulazioni" "esami" )
 
-# Clean everything up
-if [ -d "results" ]; then
-	echo "Removing old data.."
-	rm -rf "results"
+
+# Cleaning
+if [ -d "html" ]; then
+	echo -n "Removing old data.."
+	rm -rf "html"
+	echo "done!"
 fi
 
-echo "Generating folder structure.."
-mkdir -p "results"
+echo -n "Generating folder structure.."
+mkdir -p "html"
+echo "done!"
 
-# Iterate through projects
+# Coping
 for group in ${categories[@]}; do
+	echo -e "\n$group"
+
 	for proj in $(ls $group); do
+		echo "  $proj"
 
-		# Clone results folder
+		# Reports
 		res_path="$group/$proj/build/reports/tests"
-
 		if [ -d "$res_path" ]; then
-			echo "Cloning '$group/$proj'"
-			cp -r "$res_path" "results/$proj"
+			echo -n "    test results   "
+			
+			mkdir -p "html/test"
+			cp -r "$res_path" "html/test/$proj"
 
-			# Link html
-			res_file="$proj/packages/default-package.html"
+			echo "done!"
+		fi
 
-			if [ -f "results/$res_file" ]; then
-				echo "Linking Test Results for '$proj'"
-				echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=$res_file\" /></head><body></body></html>" > "results/$proj.html"
-			fi
+		# Docs
+		doc_path="$group/$proj/build/docs/javadoc"
+		if [ -d "$doc_path" ]; then
+			echo -n "    javadocs       "
+
+			mkdir -p "html/docs"
+			cp -r "$doc_path" "html/docs/$proj"
+
+			echo "done!"
 		fi
 	done
 done
 
 # Fix Symlinks
-touch "results/.nojekyll"
+touch "html/.nojekyll"
+
+echo -e "\nComplete!"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-git add results
-git commit -m "[AUTO] Updated test results"
-git subtree push --prefix results origin gh-pages
+git add "html"
+git commit -m "[AUTO] Updated html sites"
+git subtree push --prefix "html" origin gh-pages

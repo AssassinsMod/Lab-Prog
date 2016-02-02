@@ -2,31 +2,40 @@
 Tutte le modifiche apportate ai progetti verranno registrate in questo file.
 Il progetto segue lo standard di [Versionamento Semantico](http://semver.org/).
 
-## [Unreleased][]
+---
+
+## [In Sviluppo][Unreleased]
+
+---
 
 ## [1.1.0][]
-### Added
+### Aggiunte
 - [Scuola][] da [AssassinsMod][]
-### Changed
+
+### Modifiche
 - Separato `results.sh` da `update_results.sh`
-### Fixed
+
+### Fix
 - Riparato lo script per la generazione dei risultati
 
+
 ## [1.0.1-b.1][]
-### Changed
+### Modifiche
 - Fix minori
 
+
 ## [1.0.1][]
-### Added
+### Aggiunte
 - [Cassa][] da [AssassinsMod][].
 
-### Changed
+### Modifiche
 - README
   - Link ai sotto-progetti
   - Breve descrizione
 
+
 ## [1.0.0][]
-### Added
+### Aggiunte
 - [Autostrada][] da [AssassinsMod][].
 - Struttura del progetto da [AssassinsMod][].
 
