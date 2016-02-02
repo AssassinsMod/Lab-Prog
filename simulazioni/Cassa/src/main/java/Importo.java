@@ -1,16 +1,22 @@
 /**
  * Rappresenta una cifra di denaro in euro e centesimi, ma non è costante.
- * Implementa Comparable<Importo>.
+ * Implementa Comparable&lt;Importo&gt;.
+ * @see java.lang.Comparable
  */
 public class Importo implements Comparable<Importo> {
 	private int val;
 
-	public Importo(int valInCent) {
-		this.val = valInCent;
+	/**
+	 * Crea una istanza di importo.
+	 *
+	 * @param  val  Valore in centesimi.
+	 */
+	public Importo(int val) {
+		this.val = val;
 	}
 
 	/**
-	 * Restituisce il valore in centesimi.
+	 * Restituisce il valore in centesimi dell'istanza.
 	 *
 	 * @return  Valore in centesimi.
 	 */
@@ -27,8 +33,16 @@ public class Importo implements Comparable<Importo> {
 		return "€ " + (inCentesimi() / 100) + "," + (inCentesimi() % 100);
 	}
 
+	/**
+	 * Compara questa istanza di Importo con un'altra fornita come argomento.
+	 *
+	 * @param  importo  Importo da comparare
+	 * @return          Restituisce un numero negativo, zero o uno positivo se
+	 *                  questo importo è minore, uguale o maggiore di quello
+	 *                  fornito come argomento.
+	 */
 	@Override
-	public int compareTo(Importo i) {
-		return inCentesimi() - i.inCentesimi();
+	public int compareTo(Importo importo) {
+		return inCentesimi() - importo.inCentesimi();
 	}
 }

@@ -3,8 +3,8 @@ import java.util.*;
 
 /**
  * Rappresenta la cassa del supermercato, permette la scansione del Prodotto
- * ("passaggio") e la rimozione ("storno"). Fornisce informazioni sul
- * contenuto. Accetta pagamento parziale e sa dire se il pagamento copre la
+ * (<i>"passaggio"</i>) e la rimozione (<i>"storno"</i>). Fornisce informazioni
+ * sul contenuto. Accetta pagamento parziale e sa dire se il pagamento copre la
  * spesa.
  */
 public class Cassa {
@@ -23,10 +23,10 @@ public class Cassa {
 	 * Scansione del prodotto, viene aggiunto alla lista e concorre alla
 	 * formazione del totale da pagare.
 	 *
-	 * @param  prod  Prodotto da aggiungere.
+	 * @param  prodotto  Prodotto da aggiungere.
 	 */
-	public void passa(Prodotto prod) {
-		carrello.add(prod);
+	public void passa(Prodotto prodotto) {
+		carrello.add(prodotto);
 	}
 
 	/**
@@ -34,10 +34,10 @@ public class Cassa {
 	 * Moneta. Questo metodo verrà invocato più vlte fino al raggiungimento/
 	 * superamento del totale da pagare.
 	 *
-	 * @param  d  Banconota o Moneta rappresentante il valore pagato.
+	 * @param  denaro  Banconota o Moneta rappresentante il valore pagato.
 	 */
-	public void paga(Denaro d) {
-		this.pagato += d.getValoreInCentesimi();
+	public void paga(Denaro denaro) {
+		this.pagato += denaro.getValoreInCentesimi();
 	}
 
 	/**
@@ -55,7 +55,6 @@ public class Cassa {
 	 * @return  true se si è coperta la spesa
 	 */
 	public boolean pagato() {
-
 		return getPagamentoParzialeInCentesimi() >= totaleInCentesimi();
 	}
 
@@ -78,7 +77,7 @@ public class Cassa {
 	 *
 	 * @param  i  Indice del prodotto da rimuovere.
 	 * @return    Prodotto rimosso.
-	 * @throws IndexOutOfBoundsException quando l'elemento non è presente
+	 * @throws  IndexOutOfBoundsException  Quando l'elemento non è presente.
 	 */
 	public Prodotto storna(int i) throws IndexOutOfBoundsException {
 		return carrello.remove(i);
@@ -88,13 +87,13 @@ public class Cassa {
 	 * Storna il prodotto p dalla cassa, se c'è, lo rimuove sostituendolo al
 	 * chiamante.
 	 *
-	 * @param  p  Prodotto da rimuovere.
+	 * @param  prodotto  Prodotto da rimuovere.
 	 * @return    Prodotto rimosso.
 	 * @throws IndexOutOfBoundsException quando l'elemento non è presente
 	 */
-	public Prodotto storna(Prodotto p) throws IndexOutOfBoundsException {
-		if (carrello.remove(p))
-			return p;
+	public Prodotto storna(Prodotto prodotto) throws IndexOutOfBoundsException {
+		if (carrello.remove(prodotto))
+			return prodotto;
 		else
 			throw new IndexOutOfBoundsException("Prodotto non trovato");
 	}
@@ -103,7 +102,6 @@ public class Cassa {
 	 * Calcola il resto, se c'è, zero altrimenti.
 	 *
 	 * @return  Resto dovuto.
-	 *
 	 */
 	public Importo calcolaResto() {
 		return new Importo(
@@ -161,12 +159,12 @@ public class Cassa {
 	/**
 	 * Apre il file e legge i prodotti da passare nel formato 'nome,prezzo'.
 	 *
+	 * @param  file  Path relativa del file da leggere.
 	 * @throws  FileNotFoundException   Se il file è inesistente.
 	 * @throws  NoSuchElementException  Se il formato del file è errato.
 	 * @throws  IllegalStateException   Se il lettore è stato chiuso.
 	 */
-	public void salvatempo(String file) throws FileNotFoundException,
-	        NoSuchElementException, IllegalStateException {
+	public void salvatempo(String file) throws FileNotFoundException, NoSuchElementException, IllegalStateException {
 
 		Scanner reader = new Scanner(new File(file));
 
@@ -180,23 +178,11 @@ public class Cassa {
 		}
 	}
 
-	/* Dato che gradle mi compila il file di testo dentro l'eseguibile....
-	   Sono costretto ad implementare una versione *fixata* del reader */
-	public void salvatempo(InputStream is) throws FileNotFoundException,
-	        NoSuchElementException, IllegalStateException {
-
-		Scanner reader = new Scanner(is);
-
-		String line;
-		while(reader.hasNextLine() && !(line = reader.nextLine()).isEmpty()) {
-			if (line.indexOf(',') == -1)
-				throw new NoSuchElementException("Formato file non valido!");
-
-			String[] d = line.split(",");
-			carrello.add(new Prodotto(d[0], Integer.parseInt(d[1])));
-		}
-	}
-
+	/**
+	 * Fornisce una descrizione testuale della cassa.
+	 *
+	 * @return  Una stringa rappresentante l'istanza.
+	 */
 	public String toString() {
 		return "Cassa<€ " + totaleInCentesimi() / 100 + "," +
 			totaleInCentesimi() % 100 + " - " + quanti() + ">";

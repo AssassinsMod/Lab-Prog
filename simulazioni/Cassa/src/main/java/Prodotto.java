@@ -1,8 +1,10 @@
 /**
  * Classe che rappresenta un prodotto da "passare" sulla cassa, è
  * caratterizzato da un nome e da un Importo che rappresenta il suo
- * prezzo. Inoltre implementa Comparable<Prodotto> in modo che i
+ * prezzo. Inoltre implementa Comparable&lt;Prodotto&gt; in modo che i
  * prodotti siano ordinati in base al prezzo.
+ *
+ * @see java.lang.Comparable
  */
 public class Prodotto implements Comparable<Prodotto> {
 	private String nome;
@@ -12,16 +14,17 @@ public class Prodotto implements Comparable<Prodotto> {
 	 * Costruisce un prodotto con nome e prezzo in centesimi specificati.
 	 * Solleva un'eccezione se il nome è null oppure se il prezzo è negativo.
 	 *
-	 * @param  nome       Nome del prodotto
-	 * @param  valInCent  Valore in centesimi
-	 * @throws IllegalArgumentException  Se il nome è null o il valore è negativo
+	 * @param  nome  Nome del prodotto
+	 * @param  val   Valore in centesimi
+	 * @throws IllegalArgumentException  Se il nome è null o il valore è
+	 *                                   negativo
 	 */
-	public Prodotto(String nome, int valInCent) {
-		if (nome == null  || valInCent < 0)
+	public Prodotto(String nome, int val) {
+		if (nome == null  || val < 0)
 			throw new IllegalArgumentException("Protoddo non valido!");
 
 		this.nome = nome;
-		this.imp = new Importo(valInCent);
+		this.imp = new Importo(val);
 	}
 
 	/**
@@ -51,8 +54,16 @@ public class Prodotto implements Comparable<Prodotto> {
 		return this.nome + " (€ " + prezzoInCentesimi() + ")";
 	}
 
+	/**
+	 * Compara questa istanza di Prodotto con un'altra fornita come argomento.
+	 *
+	 * @param  prodotto  Prodotto da comparare
+	 * @return           Restituisce un numero negativo, zero o uno positivo se
+	 *                   il prezzo di questa istanza di prodotto è minore,
+	 *                   uguale o maggiore di quello fornito come argomento.
+	 */
 	@Override
-	public int compareTo(Prodotto p) {
-		return this.getPrezzo().compareTo(p.getPrezzo());
+	public int compareTo(Prodotto prodotto) {
+		return this.getPrezzo().compareTo(prodotto.getPrezzo());
 	}
 }

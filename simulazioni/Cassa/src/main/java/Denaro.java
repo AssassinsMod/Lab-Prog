@@ -16,7 +16,7 @@ public abstract class Denaro {
 	/**
 	 * Modifica il valore in centesimi.
 	 *
-	 * @param  val  Nuovo valore della classe.
+	 * @param  val  Valore in centesimi.
 	 */
 	public void setValoreInCentesimi(int val) {
 		this.val = val;
