@@ -1,3 +1,4 @@
+include 'esami:Scuola'
 
 include 'simulazioni:Autostrada'
 include 'simulazioni:Cassa'
