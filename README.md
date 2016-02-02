@@ -15,8 +15,10 @@ $ ./gradlew :simulazioni:Autostrada:test
 ## Come contribuire
 Per contribuire potete *"semplicemente"* creare una **pull request** (come descritto in [questa guida][pr-tutorial]) o suggerire delle modifiche aprendo un **issue**.
 
-## Esercizi
+## Esami
+- [Scuola][] - [risultati][ris-scuola]
 
+## Esercizi
 
 ## Simulazioni
 - [Autostrada][] - [risultati][ris-autostrada]
@@ -29,8 +31,10 @@ Per contribuire potete *"semplicemente"* creare una **pull request** (come descr
 
 [ris-autostrada]: http://assassinsmod.github.io/Lab-Prog/Autostrada.html
 [ris-cassa]: http://assassinsmod.github.io/Lab-Prog/Cassa.html
+[ris-scuola]: http://assassinsmod.github.io/Lab-Prog/Scuola.html
 
 [pr-tutorial]: https://help.github.com/articles/using-pull-requests/
 
+[Scuola]: /esami/Scuola
 [Autostrada]: /simulazioni/Autostrada
 [Cassa]: /simulazioni/Cassa
