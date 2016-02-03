@@ -25,5 +25,15 @@ html:
 	@./results.sh
 
 update:
-	@./update_results.sh
-	@./update.sh
+	@echo "Pushing master"
+	@git checkout master
+	@git push origin master --tags
+
+	@echo "Pushing develop"
+	@git checkout develop
+	@git push origin develop
+
+	@echo "Pushing gh-pages"
+	@git add "html"
+	@git commit -m "[AUTO] Updated html sites"
+	@git subtree push --prefix "html" origin gh-pages
