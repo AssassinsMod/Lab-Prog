@@ -7,12 +7,19 @@ Il progetto segue lo standard di [Versionamento Semantico](http://semver.org/).
 ## [In Sviluppo][Unreleased]
 ### Aggiunte
 - Makefile
+- Predisposizione per il python
+- Librerie Guava
 
 ### Modificate
 - I file di testo ora seguono la sintassi hamcrest
+- Il `makefile` ora contiene gli script di update
 
 ### Fix
 - Completata la documentazione per la simulazioni Cassa
+- Link relativi ai source
+
+### Rimossi
+- `update.sh` e `update_results.sh` (integrati nel `makefile`)
 
 ---
 
